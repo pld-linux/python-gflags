@@ -58,6 +58,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gflags2man
 %{py_sitescriptdir}/%{module}.py[co]
 %{py_sitescriptdir}/%{module}_validators.py[co]
-%if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/python_gflags-%{version}-py*.egg-info
-%endif
