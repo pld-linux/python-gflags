@@ -1,13 +1,15 @@
 %define		module gflags
 Summary:	Commandline flags module for Python
+Summary(pl.UTF-8):	Moduł flag linii poleceń dla Pythona
 Name:		python-%{module}
-Version:	1.5.1
+Version:	1.7
 Release:	1
 License:	BSD
 Group:		Development/Languages/Python
+#Source0Download: http://code.google.com/p/python-gflags/downloads/list
+Source0:	http://python-gflags.googlecode.com/files/%{name}-%{version}.tar.gz
+# Source0-md5:	72c034d499cc9bcc11c330b95396d83d
 URL:		http://code.google.com/p/python-gflags/
-Source0:	http://python-gflags.googlecode.com/files/python-gflags-%{version}.tar.gz
-# Source0-md5:	467717cdcf65f11b3edd1cc99debb244
 BuildRequires:	python-devel
 BuildRequires:	python-distribute
 BuildRequires:	rpmbuild(macros) >= 1.219
@@ -16,7 +18,7 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This project is the python equivalent of google-gflags, a Google
+This project is the Python equivalent of google-gflags, a Google
 commandline flag implementation for C++. It is intended to be used in
 situations where a project wants to mimic the command-line flag
 handling of a C++ app that uses google-gflags, or for a Python app
@@ -28,6 +30,20 @@ flags processing. As such it's a replacement for getopt(). It has
 increased flexibility, including built-in support for Python types,
 and the ability to define flags in the source file in which they're
 used. (This last is its major difference from OptParse.)
+
+%description -l pl.UTF-8
+Ten projekt jest pythonowym odpowiednikiem google-gflags -
+implementacji C++ flag linii poleceń autorstwa Google. Jego
+zastosowaniem są projekty, które mają naśladować obsługę flag linii
+poleceń aplikacji C++ wykorzystujących google-gflags oraz aplikacje
+Pythona, które poprzez swig lub w inny sposób są zlinkowane z
+aplikacją C++ wykorzystującą google-gflags.
+
+Pakiet gflags zawiera bibliotekę implementującą przetwarzanie flag
+linii poleceń. Jako taka jest zamiennikiem getopt(). Ma większą
+elastyczność, w tym wbudowaną obsługę typów pythonowych oraz możliwość
+definiowania flag w plikach źródłowych, w których są używane (to
+ostatnie to główna różnica względem OptParse).
 
 %prep
 %setup -q
