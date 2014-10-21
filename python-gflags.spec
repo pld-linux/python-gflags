@@ -3,7 +3,7 @@ Summary:	Commandline flags module for Python
 Summary(pl.UTF-8):	Moduł flag linii poleceń dla Pythona
 Name:		python-%{module}
 Version:	2.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages/Python
 #Source0Download: http://code.google.com/p/python-gflags/downloads/list
@@ -63,7 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %py_postclean
 
 # Remove ext from name
-mv $RPM_BUILD_ROOT%{_bindir}/gflags2man.py  $RPM_BUILD_ROOT%{_bindir}/gflags2man
+%{__mv} $RPM_BUILD_ROOT%{_bindir}/gflags2man.py  $RPM_BUILD_ROOT%{_bindir}/gflags2man
 
 %clean
 rm -rf $RPM_BUILD_ROOT
