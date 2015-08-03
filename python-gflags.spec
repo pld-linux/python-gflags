@@ -6,10 +6,11 @@ Version:	2.0
 Release:	2
 License:	BSD
 Group:		Development/Languages/Python
-#Source0Download: http://code.google.com/p/python-gflags/downloads/list
+#Source0Download: https://github.com/gflags/python-gflags
+#Source0:	https://github.com/gflags/python-gflags/archive/%{name}-%{version}.tar.gz
 Source0:	http://python-gflags.googlecode.com/files/%{name}-%{version}.tar.gz
 # Source0-md5:	c3ab70218dbf945cc32c0cd64c51d162
-URL:		http://code.google.com/p/python-gflags/
+URL:		https://github.com/gflags/python-gflags
 BuildRequires:	python-devel
 BuildRequires:	python-distribute
 BuildRequires:	rpmbuild(macros) >= 1.219
