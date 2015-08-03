@@ -3,7 +3,7 @@ Summary:	Commandline flags module for Python
 Summary(pl.UTF-8):	Moduł flag linii poleceń dla Pythona
 Name:		python-%{module}
 Version:	2.0
-Release:	2
+Release:	3
 License:	BSD
 Group:		Development/Languages/Python
 #Source0Download: https://github.com/gflags/python-gflags
@@ -51,6 +51,8 @@ ostatnie to główna różnica względem OptParse).
 # Fix non-executable-script error
 %{__sed} -i '/^#!\%{_prefix}\/bin\/env python$/,+1 d' %{module}.py
 
+%{__sed} -i '1s,/usr/bin/env python,/usr/bin/python,' gflags2man.py
+
 %build
 %{__python} setup.py build
 
@@ -73,6 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog COPYING README
 %attr(755,root,root) %{_bindir}/gflags2man
-%{py_sitescriptdir}/%{module}.py[co]
-%{py_sitescriptdir}/%{module}_validators.py[co]
+%{py_sitescriptdir}/gflags.py[co]
+%{py_sitescriptdir}/gflags_validators.py[co]
 %{py_sitescriptdir}/python_gflags-%{version}-py*.egg-info
