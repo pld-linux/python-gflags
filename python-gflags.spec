@@ -6,7 +6,6 @@ Version:	2.0
 Release:	3
 License:	BSD
 Group:		Development/Languages/Python
-#Source0Download: https://github.com/gflags/python-gflags
 #Source0:	https://github.com/gflags/python-gflags/archive/%{name}-%{version}.tar.gz
 Source0:	http://python-gflags.googlecode.com/files/%{name}-%{version}.tar.gz
 # Source0-md5:	c3ab70218dbf945cc32c0cd64c51d162
@@ -49,9 +48,9 @@ ostatnie to główna różnica względem OptParse).
 %prep
 %setup -q
 # Fix non-executable-script error
-%{__sed} -i '/^#!\%{_prefix}\/bin\/env python$/,+1 d' %{module}.py
+%{__sed} -i '/^#!\/usr\/bin\/env python$/,+1 d' %{module}.py
 
-%{__sed} -i '1s,/usr/bin/env python,/usr/bin/python,' gflags2man.py
+%{__sed} -i '1s,/usr/bin/env python,%{_bindir}/python,' gflags2man.py
 
 %build
 %{__python} setup.py build
@@ -66,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %py_postclean
 
 # Remove ext from name
-%{__mv} $RPM_BUILD_ROOT%{_bindir}/gflags2man.py  $RPM_BUILD_ROOT%{_bindir}/gflags2man
+%{__mv} $RPM_BUILD_ROOT%{_bindir}/gflags2man{.py,}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
