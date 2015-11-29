@@ -12,7 +12,7 @@ Source0:	http://python-gflags.googlecode.com/files/%{name}-%{version}.tar.gz
 URL:		https://github.com/gflags/python-gflags
 BuildRequires:	python-devel
 BuildRequires:	python-distribute
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	sed >= 4.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
