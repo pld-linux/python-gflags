@@ -3,7 +3,7 @@ Summary:	Commandline flags module for Python
 Summary(pl.UTF-8):	Moduł flag linii poleceń dla Pythona
 Name:		python-%{module}
 Version:	2.0
-Release:	4
+Release:	5
 License:	BSD
 Group:		Development/Languages/Python
 #Source0:	https://github.com/gflags/python-gflags/archive/%{name}-%{version}.tar.gz
